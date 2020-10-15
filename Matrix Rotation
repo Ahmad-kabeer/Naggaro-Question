@@ -1,0 +1,59 @@
+public class MatrixRotation {
+    public static void main(String[] as){
+        int[][] arr={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+//        int[][] arr={{6,7,8},{10,11,12},{14,15,16}};
+        int num=0;        //user input
+        int i=num;
+
+        int row= arr[0].length;
+        int col= arr.length;
+        int temp=0;
+        while(i<col&&i<row){
+            for (int j=i+1; j < row && j<col; j++) {
+                temp=arr[i][j];
+                arr[i][j]=arr[j][i];
+                arr[j][i]=temp;
+            }
+            i++;
+        }
+//        i=num;
+//        while (i<col){                //90degre rotataion anticlockwise
+//            int j=num;
+//            int k=row-1;
+//            while(j<=k){
+//                temp=arr[j][i];
+//                arr[j][i]=arr[k][i];
+//                arr[k][i]=temp;
+//                j++;k--;
+//            }
+//            i++;
+//        }
+//
+//        for (int l = 0; l < row; l++) {             //print
+//            for (int m = 0; m <col ; m++) {
+//                System.out.print(arr[l][m]+" ");
+//            }
+//            System.out.println();
+//        }
+        //
+        i=num;
+        while (i<row){              //90degree rotataion clockwise
+            int j=num;
+            int k=col-1;
+            while(j<=k){
+                temp=arr[i][j];
+                arr[i][j]=arr[i][k];
+                arr[i][k]=temp;
+                j++;k--;
+            }
+            i++;
+        }
+        
+        for (int l = 0; l < row; l++) {             //print
+            for (int m = 0; m <col ; m++) {
+                System.out.print(arr[l][m]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
