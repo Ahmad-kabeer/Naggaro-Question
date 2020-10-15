@@ -1,0 +1,28 @@
+import java.io.StringReader;
+import java.io.IOException;
+import java.io.BufferedReader.*;
+public class SwapString {
+    public static char[] toMyArray (String s)
+    {
+        StringReader reader = new StringReader (s);
+        int k = 0;
+        int i = 0;
+        char[] output = new char[s.length ()];
+        try{
+            while ((k = reader.read()) != -1){
+                output[i] = ((char) k);
+                i++;
+            }
+
+        }catch (Exception e){}
+        return output;
+    }
+
+    public static void main(String[] a) throws IOException {
+        String s="ahmad kber";
+        char[] ch=SwapString.toMyArray(s);
+        for (char c:ch) {
+            System.out.println(c);
+        }
+    }
+}
