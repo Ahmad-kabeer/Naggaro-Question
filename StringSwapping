@@ -1,0 +1,20 @@
+import java.io.IOException;
+
+public class SwapString {
+    public static void main(String[] args) throws IOException{
+        String str="I love Programming";
+        char[] ch=str.toCharArray();
+        for (int i = str.length()-1; i >=0 ; i--) {
+            if(i==0){
+                System.out.println(ch[i]);
+            }
+            if(ch[i]==' '){
+                for (int j = i+1; j <str.length() && ch[j]!=' '; j++) {
+                    System.out.print(ch[j]);
+                }
+                System.out.print(" ");
+            }
+        }
+    }
+}
+
