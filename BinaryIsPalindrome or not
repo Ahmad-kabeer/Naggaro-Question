@@ -1,0 +1,32 @@
+package com.company;
+import java.util.HashSet;
+public class Main {
+//    static void bin(int n)
+//    {
+//        int
+//        if (n > 1)
+//            bin(n/2);
+//        System.out.print(n % 2);
+//    }
+    public static void main(String[] args) {
+        int n=4;
+        int bin[]=new int[100];
+        int i=0;
+        while(n>0){
+            bin[i++]=n%2;
+            n=n/2;
+        }
+        int[] bin1=new int[i];
+        for (int l=0;l<i-1&&i>=0;l++) {
+            bin1[l]=bin[i-1];
+            i--;
+        }
+        if(bin1==bin){
+            System.out.println("true");
+        }
+        else {
+            System.out.println("false");
+        }
+
+    }
+}
