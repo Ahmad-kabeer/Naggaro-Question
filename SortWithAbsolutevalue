@@ -1,0 +1,57 @@
+public class Problem {
+    static int absolute(int i){
+        if(i==0){
+            return 0;
+        }
+        else if (i<0){
+            return -i;
+        }
+        else {
+            return i;
+        }
+    }
+    static int len(int[] arr){
+        int c=0;
+        for (int i:arr             ) {
+            c++;
+        }
+        return c;
+    }
+    static void SwapI(int i,int[] arr){
+        int temp=arr[i];
+        arr[i]=arr[i+1];
+        arr[i+1]=temp;
+    }
+    static void SwapF(int i,int j,int[] arr){
+        if((absolute(arr[i]))<(absolute(arr[j]))){
+            return;
+        }
+        else {
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            return;
+        }
+    }
+
+    //driver code
+    public static void main(String[] arg){
+        int[] arr=new int[]{-8,-5,-3,-1,3,6,9};
+        int i=0;
+        int j= len(arr)-1;
+        while(j!=i){
+            if((absolute(arr[i]))>(absolute(arr[i+1]))){
+                SwapF(i,j,arr);
+                j--;
+            }
+            else {
+                SwapI(i,arr);
+                SwapF(i,j,arr);
+                j--;
+            }
+        }
+        for (int l:arr        ) {
+            System.out.print(l+" ");
+        }
+    }
+}
